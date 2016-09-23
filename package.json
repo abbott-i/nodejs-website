@@ -1,0 +1,30 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "first website",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "stylus source/stylesheets/index.styl -o static/css",
+    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
+    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build": "npm run clean && npm run build-css",
+    "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
+    "start": "node server"
+ },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abbott-i/nodejs-website.git"
+  },
+  "author": "Ian Abbott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abbott-i/nodejs-website/issues"
+  },
+  "homepage": "https://github.com/abbott-i/nodejs-website#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "morgan": "^1.7.0",
+    "stylus": "^0.54.5"
+  }
+}
